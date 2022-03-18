@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+tecnologia = Category.create(name: 'Tecnologia')
+historia = Category.create(name: 'Historia')
+ciencia = Category.create(name: 'Ciencia')
+
+Category.create(name: 'Fullstack', category_id: tecnologia)
+Category.create(name: 'Front End', category_id: tecnologia)
+Category.create(name: 'Data Science', category_id: tecnologia)
+Category.create(name: 'UX UI', category_id: tecnologia)
+
+Category.create(name: 'Moderna', category_id: historia)
+Category.create(name: 'Antigua', category_id: historia)
+Category.create(name: 'Futura', category_id: historia)
+Category.create(name: 'Media', category_id: historia)
+
+Type.create(name: 'link')
+Type.create(name: 'paper')
+Type.create(name: 'video')
+Type.create(name: 'audio')
+
+
