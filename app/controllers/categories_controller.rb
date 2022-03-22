@@ -6,6 +6,11 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
+  def endpoint_category
+  @categories = Category.all
+  render json: {categories: @categories}
+  end 
+
   # GET /categories/1 or /categories/1.json
   def show
   end
