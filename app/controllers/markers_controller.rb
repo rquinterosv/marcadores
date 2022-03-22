@@ -8,7 +8,6 @@ class MarkersController < ApplicationController
 
   def reservar 
     @marker = Marker.find(params[:id])
-    @marker.user_id = current_user.id
     @marker.save
     redirect_to marker_url(@marker)
   end
