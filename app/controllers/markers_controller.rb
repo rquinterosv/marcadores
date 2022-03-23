@@ -4,12 +4,7 @@ class MarkersController < ApplicationController
   # GET /markers or /markers.json
   def index
     @markers = Marker.all
-  end
-
-  def reservar 
-    @marker = Marker.find(params[:id])
-    @marker.save
-    redirect_to marker_url(@marker)
+    @marker = Marker.new
   end
 
   # GET /markers/1 or /markers/1.json
@@ -28,14 +23,22 @@ class MarkersController < ApplicationController
   # POST /markers or /markers.json
   def create
     @marker = Marker.new(marker_params)
+    
+
+    puts @marker
+    puts @marker.name
+    puts @marker.type
 
     respond_to do |format|
       if @marker.save
+        @marker_new = Marker.new
         format.html { redirect_to marker_url(@marker), notice: "Marker was successfully created." }
         format.json { render :show, status: :created, location: @marker }
+        format.js
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @marker.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

@@ -1,0 +1,7 @@
+<% if @marker.errors.any? %>
+  document.querySelector('#marker-form-container').innerHTML = '<%= j render partial: "form", locals: {marker: @marker} %>'
+<% else %>
+  // HACK: esta linea es equivalente a la de abajo:    document.querySelector('#marker').innerHTML += '<%= escape_javascript render partial: "marker", locals: {marker: @marker} %>'
+  document.querySelector('#marker-form-container').innerHTML = '<%= j render partial: "form", locals: {marker: @marker_new} %>'
+  document.querySelector('#marker').innerHTML += '<%= j render partial: "marker", locals: {marker: @marker} %>'
+<% end %>

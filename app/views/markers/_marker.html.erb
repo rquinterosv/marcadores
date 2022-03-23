@@ -1,0 +1,10 @@
+<tr id="marker"-<%= marker.id%>>
+  <td><%= marker.name %></td>
+  <td><%= marker.date %></td>
+  <td><%= marker.state %></td>
+  <td><%= marker.type_id %></td>
+  <td><%= marker.category_id %></td>
+  <td><%= link_to 'Show', marker %></td>
+  <td><%= link_to 'Edit', edit_marker_path(marker) %></td>
+  <td><%= link_to 'Destroy', marker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
